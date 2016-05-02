@@ -1,7 +1,7 @@
 <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
 
 <style type='text/css'>
-    #whoami p {
+    #about p {
       opacity: 0;
       margin-top: 25px;
       font-size: 1.5em;
@@ -23,7 +23,7 @@
 
    @media only screen and (max-device-width: 480px), only screen and (min-device-width: 560px) and (max-device-width: 1136px) and (-webkit-min-device-pixel-ratio: 2) {
     /* iPhone only */
-      #whoami p {
+      #about p {
       opacity: 0;
       margin: 2em;
       font-size: 1.4em;
@@ -39,3 +39,9 @@
       padding: 0 0 100px 0;
     }
   </style>
+
+<script type='text/javascript'>//<![CDATA[ 
+  $(window).load(function(){
+  $("#about p").delay(1000).animate({"opacity": "1"}, 700);
+  });//]]>  
+</script>
