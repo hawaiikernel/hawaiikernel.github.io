@@ -24,13 +24,13 @@ title: Home
 <script type="text/javascript">
 
   feed = new Instafeed({
-     get: 'user',
-          userId: 141970,
-          accessToken: '141970.467ede5.edbc9c37472d41b790e1db8948793f11',
-          sortby: 'random',
-          resolution: 'standard_resolution',
-          links: 'false',
-          limit: '10',
+   get: 'tagged',
+        tagName: 'awesome',
+        clientId: '7cc9252718494f4aa5bbcd4cd6bcd7fa',
+        sortby: 'random',
+        resolution: 'standard_resolution',
+        links: 'false',
+        limit: '10',
           template: '<div id="caption">{{caption}} <br>{{likes}} asd<a href="http://instagram.com/hemeon" class="sky">asd</a></div><div id="bg"><img src="{{image}}" /></div>',
     mock: true,
     custom: {
