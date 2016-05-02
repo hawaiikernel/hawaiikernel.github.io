@@ -21,12 +21,42 @@ title: Home
 
 <!-- Grab My Latest Instagram Photo -->
 <script type="text/javascript">
-    var feed = new Instafeed({
-        get: 'tagged',
+
+  feed = new Instafeed({
+   get: 'tagged',
         tagName: 'awesome',
-        clientId: '7cc9252718494f4aa5bbcd4cd6bcd7fa'
-    });
-    feed.run();
+        clientId: '7cc9252718494f4aa5bbcd4cd6bcd7fa',
+        sortby: 'random',
+        resolution: 'standard_resolution',
+        links: 'false',
+        limit: '10',
+        template: '<div id="caption">{{caption}} <br>{{likes}} asd<a href="http://instagram.com/hemeon" class="sky">asd</a></div><div id="bg"><img src="{{image}}" /></div>',
+    mock: true,
+    custom: {
+      images: [],
+      currentImage: 0,
+      showImage: function () {
+        var result, image;
+        image = this.options.custom.images[this.options.custom.currentImage];
+        result = this._makeTemplate(this.options.template, {
+          model: image,
+          id: image.id,
+          link: image.link,
+          image: image.images[this.options.resolution].url,
+          caption: this._getObjectProperty(image, 'caption.text'),
+          likes: image.likes.count,
+          comments: image.comments.count,
+          location: this._getObjectProperty(image, 'location.name')
+        });
+        $("#instafeed").html(result);
+      }
+    },
+    success: function (data) {
+      this.options.custom.images = data.data; 
+      this.options.custom.showImage.call(this);
+    }
+  });
+  feed.run();
 </script>
 
 <!--
