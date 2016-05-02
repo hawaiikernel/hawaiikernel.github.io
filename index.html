@@ -3,6 +3,8 @@ layout: default
 title: Home
 ---
 
+{% include instafeed.html %}
+
 <script src="http://use.typekit.net/kjx8ypz.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
 
@@ -280,7 +282,6 @@ $(".prev").click(function () {
   }
 });
   </script>
-
 <!--
 <div class="posts">
   {% for post in paginator.posts %}
