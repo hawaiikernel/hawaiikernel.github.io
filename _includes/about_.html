@@ -1,0 +1,41 @@
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+
+<style type='text/css'>
+    #whoami p {
+      opacity: 0;
+      margin-top: 25px;
+      font-size: 1.5em;
+      text-align: left;
+      z-index: 9999;
+      position: absolute;
+      color: #525252;
+      top: 100px;
+      left: 100px;
+      width: 40%;
+      font-weight: 200;
+      line-height: 1.4em;
+    }
+    /* colors  I stole from Layer Vault because they own all the color in the world */
+    .green {color:#de5267;}
+    .tomato {color:#de5267;}
+    .sky {color:#de5267;}
+    .mustard {color:#de5267;}
+
+   @media only screen and (max-device-width: 480px), only screen and (min-device-width: 560px) and (max-device-width: 1136px) and (-webkit-min-device-pixel-ratio: 2) {
+    /* iPhone only */
+      #whoami p {
+      opacity: 0;
+      margin: 2em;
+      font-size: 1.4em;
+      text-align: left;
+      z-index: 9999;
+      position: relative;
+      color: #525252;
+      top: .5em;
+      left: .2em;
+      width: 80%;
+      weight: bold;
+      display: inline-block;
+      padding: 0 0 100px 0;
+    }
+  </style>
